@@ -1,0 +1,561 @@
+/*****************
+TABLE DES MATIERES
+	=KEYFRAMES
+	=MISC
+	=NAVBAR
+	=HOME
+	=FORMULAIRES
+	=PROFIL
+*******************/
+
+/* SYNTAXE CSS (BEM) 
+* ~ Très approximativement respectée
+block-name
+block-name_modifier_name
+block-name__element-name
+block-name__element-name_modifier_name
+
+exemples :
+.search-box {
+  height: 300px;
+  width: 300px;
+}
+.search-box_light {
+  background-color: #DEF;
+  color: #777;
+}
+.search-box__btn {
+  padding: 4px;
+}
+.search-box__btn_max_visible {
+  font-weight: bold;
+}
+*
+*/
+
+/*
+	=KEYFRAMES
+*/
+@keyframes menu-login {
+    0% { 
+        opacity: 0; 
+        transform: translateY(-100px) scale(1.05);
+    }
+    30% {
+    	opacity: 1;
+    	transform: translateY(-70px) scale(1.05);
+    }
+    75% {
+    	transform: translateY(0) scale(1.05);
+    }
+    80% {
+    	transform: translateY(0) scale(1.05);
+    }
+    100% { 
+        opacity: 1; 
+        transform: translateY(-10px) scale(1);
+    }
+}
+
+@keyframes form-animation-exit {
+	0% {
+		opacity: 1;
+		transform: rotateY(0deg);
+	}
+	100% {
+		opacity: 1;
+		transform: rotateY(180deg);
+	}
+}
+
+@keyframes form-animation-entry {
+	0% {
+		opacity: 0;
+		transform: rotateY(180deg);
+	}
+	100% {
+		opacity: 1;
+		transform: rotateY(0deg);
+	}
+}
+
+/*
+	=KEYFRAMES FIN
+*/
+
+
+
+
+
+
+/*
+	=MISC
+*/
+body,html {
+	position: relative;
+	margin: 0;
+	font-family: segoe ui;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	margin: 0;
+}
+
+fieldset {
+	all: inherit;
+}
+
+error {
+	color: red;
+	padding: 3px;
+}
+
+#wrapper {
+	background-color: #bcd175;
+	min-height: 100vh;
+}
+
+#wrapper .footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	min-height: 30px;
+	text-align: center;
+	background-color: #acd6c3;
+}
+
+#wrapper .footer a {
+	color: black;
+	text-decoration: none;
+	font-size: 12px;
+}
+
+.main-page {
+	width:  960px;
+	margin: 0 auto;
+	background-color: #dbe7b6;
+	min-height: 100vh;
+}
+
+.main-container {
+	padding: 50px 0 35px;
+}
+
+.le-voile {
+	display: none;
+}
+
+.le-voile.show {
+	display: block;
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.3);
+	z-index: 1;
+}
+
+.default-button, #apply_changes.default-button {
+	border:none;
+	padding:6px 0 6px 0;
+	border-radius:2px;
+	box-shadow:2px 2px 6px #999;
+	background:#fff;
+	color:#555;
+	cursor: pointer;
+}
+
+.noselect {
+	-webkit-touch-callout: none; /* iOS Safari */
+	  -webkit-user-select: none; /* Safari */
+	   -khtml-user-select: none; /* Konqueror HTML */
+		 -moz-user-select: none; /* Firefox */
+		  -ms-user-select: none; /* Internet Explorer/Edge */
+			  user-select: none; /* Non-prefixed version, currently
+									supported by Chrome and Opera */
+ }
+
+.no-display {
+	display: none;
+}
+
+/*
+	=MISC END
+*/
+
+
+/*
+	=NAVBAR
+*/
+
+.navbar-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+    flex-direction: row;
+    z-index: 999;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    background: #a47745;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+  .sub-navbar {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .nav-button {
+	border-right: 2px solid #dbe7b6;
+  }
+
+  .nav-button:last-of-type {
+    border-right: none;
+  }
+
+  .nav-button:hover {
+  	background: #845624;
+  }
+
+  .nav-button:first-child:hover {
+    background: #845624;
+    border-bottom-left-radius: 5px;
+  }
+  .nav-button:last-child:hover {
+    background: #845624;
+    border-bottom-right-radius: 5px;
+  }
+
+  .nav-button.active {
+  	background: #845624;
+  }
+
+  .navbar span, .navbar a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    width: 112px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+/*
+	=NAVBAR FIN
+*/
+
+
+/*
+	=HOME
+*/
+.container-home {
+  display: flex;
+}
+
+.image-home {
+  width: 430px;
+  height: 300px;
+  margin: 10px;
+  border-radius: 3px;
+}
+
+.text-home {
+  width: 55%;
+}
+
+/*
+	=HOME FIN
+*/
+
+
+
+/*
+	=FORMULAIRES
+	=CONN/INSC
+	=FORMPROFIL
+*/
+
+
+input[type="submit"] {
+	cursor: pointer;
+}
+
+.form-sign-up {
+	display: none;
+}
+
+.form-sign-up.show {
+	position: fixed;
+	display: block;
+	z-index: 999;
+	width: 300px;
+	top: 100px;
+	left: 50%;
+	margin-left: -150px;
+	background-color: #acd6c3;
+	box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
+	border-radius: 2px;
+
+	/*Paramètres des animations*/
+	perspective: 1000px;
+	opacity: 0;
+	animation: menu-login 400ms 100ms ease-out forwards;
+}
+
+.sign-up {
+	padding: 5px 0 5px 0;
+	transition: 100ms ease;
+}
+
+.sign-up > * {
+	padding: 0;
+}
+
+.sign-up .client, .sign-up .chien {
+	display: none;
+	animation: form-animation-exit 400ms ease forwards;
+}
+
+.sign-up .client.show, .sign-up .chien.show {
+	display: flex;
+	flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation-delay: 300ms;
+	animation: form-animation-entry 400ms ease forwards;
+}
+
+.sign-up .client.first-show {
+	display: flex;
+	flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: none;
+}
+
+.admin-form-container {
+	height: 80vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.sign-up.admin {
+	width: 300px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    border: solid 1px #444;
+}
+
+.sign-up.admin form {
+	display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 120px;
+}
+
+.sign-up h3 {
+	margin: 2px 0 5px;
+}
+
+.sign-up input, .sign-up select, .sign-up error {
+	margin: 5px 5px 0 5px;
+	width: 250px;
+	display: block;
+	min-height: 20px;
+	font-family: segoe ui;
+	font-size: inherit;
+}
+
+.sign-up select {
+	padding: 2px 5px;
+	width: 254px
+}
+.sign-up input {
+	padding: 2px 2px;
+	border: none;
+	border-radius: 0;
+}
+
+.sign-up input:focus, .sign-up select:focus {
+	outline: none;
+	box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
+}
+
+.sign-up input[type="checkbox"] {
+	display: inline-block;
+	width: initial;
+	flex: none;
+	margin: 0 5px;
+}
+
+.sign-up input[type="checkbox"]:focus {
+	outline: none;
+	box-shadow: none;
+}
+
+.sign-up input[type="submit"] {
+	margin: 10px 0;
+}
+
+.sign-up .lof__div {
+	display: block;
+}
+
+.sign-up .lof__label {
+	margin: 2px 5px 0 5px;
+	padding: 1px 0;
+	width: initial;
+}
+
+.sign-up .form-header {
+	padding: 3px;
+	display: flex;
+	justify-content: flex-end;
+    align-items: right;
+}
+
+.sign-up form .form-change {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#inscription i.fa.fa-times,
+#connexion i.fa.fa-times {
+	cursor: pointer;
+}
+
+form .form-change .default-button {
+	font: inherit;
+	background-color: buttonface;
+	padding: 1px 4px;
+	cursor: pointer;
+	box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5);
+	margin-top: 9px;
+	margin-bottom: 7px;
+}
+
+
+/*
+	=FORMPROFIL
+*/
+
+.form-profil h3 {
+	margin: 5px 0;
+}
+
+.form-profil .profil-maitre, .form-profil .profil-chien {
+	background: rgba(0, 0, 0, 0.2);
+    border: solid 1px #444;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.form-profil .profil-chien {
+	margin-top: 10px;
+}
+
+.form-profil input {
+	padding: 2px 2px;
+	border: none;
+	border-radius: 0;
+}
+
+.form-profil input, .form-profil select {
+	font-family: segoe ui;
+	font-size: inherit;
+}
+
+.form-profil input, .form-profil select {
+	width: 300px;
+	margin: 5px 0;
+}
+
+.form-profil input[type="checkbox"] {
+	width: 100px;
+}
+
+.modify {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.modify .default-button {
+	width: 200px;
+	margin: 5px auto;
+	text-align: center;
+	cursor: pointer;
+	user-select: none;
+}
+
+/*
+	=FORMULAIRES FIN
+*/
+
+
+
+/*
+	=PROFIL
+*/
+
+#profile .profile {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.profile .picture {
+	width: 200px;
+	height: 200px;
+	background-color: rgb(230,230,230);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.profile .picture .container {
+	font-style: italic;
+	width: 200px;
+	height: 200px;
+}
+
+.profile .info {
+	width: 400px;
+}
+
+.profile .reminder {
+	background: rgba(255, 255, 255, 0.3);
+	width: 300px;
+	border: 2px solid red;
+	word-wrap: break-word;
+}
+
+.profile .reminder .warning > div {
+	margin: 5px 3px;
+	background: rgb(241, 241, 241);
+	border: 1px solid black;
+}
+
+.profile .reminder datefin {
+	font-weight: bold;
+}
+/*
+	=PROFIL FIN
+*/
