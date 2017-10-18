@@ -12,7 +12,7 @@ class PdoAssoc
   */
   private static $serveur='mysql:host=127.0.0.1';
   private static $user='root';
-  private static $mdp='';
+  private static $mdp='';*/
   private static $Pdo;
   private static $_PdoAssoc = null;
 
