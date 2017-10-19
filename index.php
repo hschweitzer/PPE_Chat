@@ -6,11 +6,13 @@ require("util/classpdo.php");
 $Pdo = PdoAssoc::getPdoAssoc();
 require("util/send_mail.php");
 require("util/fonctions.php");
+include("controleurs/c_tchat.php");
 include("vues/v_entete.php");
 include("vues/v_bandeau.php");
 $lesRaces = $Pdo->getToutesLesRaces();
 include("vues/v_inscription.php");
 include("vues/v_login.php");
+include("vues/v_tchat.php");
 
 if (!isset($_GET["uc"]))
     $uc = 'accueil';
