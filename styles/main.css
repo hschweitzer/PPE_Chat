@@ -599,13 +599,13 @@ form .form-change .default-button {
 	padding: 3px;
 	
 }
+*/
 
 .chat .chat-form {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 }
-*/
 .chat input[type="text"], .chat textarea {
 	padding: 10px;
 	border: solid 5px #c9c9c9;
