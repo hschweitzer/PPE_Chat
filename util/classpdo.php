@@ -2,15 +2,15 @@
 class PdoAssoc
 {
   private static $bdd='dbname=domaineduverger';
-  /*Docker
+  /*Docker*/
   private static $serveur='mysql:host=172.17.0.6';
   private static $user='anthony';
   private static $mdp='btssio';
-*/
-  /*Local*/
+
+  /*Local
   private static $serveur='mysql:host=127.0.0.1';
   private static $user='root';
-  private static $mdp='';/**/
+  private static $mdp='';*/
   private static $Pdo;
   private static $_PdoAssoc = null;
   private function __construct()
