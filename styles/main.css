@@ -569,7 +569,6 @@ form .form-change .default-button {
 
 /*
 	=CHAT
-*/
 
 .messages::-webkit-scrollbar {
     width: 10px;
@@ -605,9 +604,8 @@ form .form-change .default-button {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	/*align-items: center;*/
 }
-
+*/
 .chat input[type="text"], .chat textarea {
 	padding: 10px;
 	border: solid 5px #c9c9c9;
@@ -637,6 +635,7 @@ form .form-change .default-button {
 	min-width: 370px;
 }
 
+/*
 .chat .messages {
 	max-height: 60vh;
 	min-height: 100px;
