@@ -206,9 +206,9 @@ class PdoAssoc
       PdoAssoc::$Pdo->exec($req);
     }
 
-    public function insertChatmember($id,$email)
+    public function insertChatmember($email)
     {
-      $req = 'INSERT INTO chatmember (id, email) VALUES ('.$id.','.$email.')';
+      $req = 'INSERT INTO chatmember (email) VALUES ("'.$email.'")';
       PdoAssoc::$Pdo->exec($req);
     }
   /*
@@ -288,7 +288,7 @@ class PdoAssoc
   */
   public function testChatmember($email)
   {
-    $req = 'SELECT email FROM chatmember WHERE email = '.$email.'';
+    $req = 'SELECT id FROM chatmember WHERE email = "'.$email.'"';
     $res = PdoAssoc::$Pdo->query($req);
     return $res->fetch();
   }

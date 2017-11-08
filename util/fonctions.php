@@ -67,4 +67,14 @@ function connexionUtilisateur($Pdo, $email, $mdp)
   else if ($ligne["nb"] == "1") { $_SESSION["id_user"] = $ligne["id"]; return 1; }
   else return 0;
 }
+
+function connexionChat($email,$Pdo)
+{
+  $exists = $Pdo->testChatmember($email);
+    if(!$exists)
+    {
+      $Pdo->insertChatmember($email);
+    }
+    $_SESSION['chat_user'] = $email;
+}
 ?>
