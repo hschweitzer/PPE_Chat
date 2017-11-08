@@ -1,4 +1,4 @@
-<div id="tchat" class="chatshow">
+<div id="tchat" class="chat show">
 	<div class="info">
 		Contacter un administrateur :
 	</div>
