@@ -2,17 +2,18 @@
 class PdoAssoc
 {
   private static $bdd='dbname=domaineduverger';
-  /*Docker
+  /*Docker*/
   private static $serveur='mysql:host=172.17.0.6';
   private static $user='anthony';
   private static $mdp='btssio';
-*/
-  /*Local*/
+
+  /*Local
   private static $serveur='mysql:host=127.0.0.1';
   private static $user='root';
-  private static $mdp='';/**/
+  private static $mdp='';*/
   private static $Pdo;
   private static $_PdoAssoc = null;
+
   private function __construct()
   {
     PdoAssoc::$Pdo = new PDO(PdoAssoc::$serveur.';'.PdoAssoc::$bdd, PdoAssoc::$user, PdoAssoc::$mdp);
@@ -198,12 +199,18 @@ class PdoAssoc
       $req = 'INSERT INTO member (id, first_name, last_name, birthdate, email, phone, token_for_family) VALUES ('.$id.', "'.$prenom.'", "'.$nom.'", "'.$dateNaiss.'", "'.$email.'", "'.$tel.'", "'.$token.'")';
       PdoAssoc::$Pdo->exec($req);
     }
+
     public function insertUtilisateurFamille($id, $prenom, $nom, $dateNaiss, $email, $tel)
     {
       $req = 'INSERT INTO member (id, first_name, last_name, birthdate, email, phone) VALUES ('.$id.', "'.$prenom.'", "'.$nom.'", "'.$dateNaiss.'", "'.$email.'", "'.$tel.'")';
       PdoAssoc::$Pdo->exec($req);
     }
 
+    public function insertChatmember($id,$email)
+    {
+      $req = 'INSERT INTO chatmember (id, email) VALUES ('.$id.','.$email.')';
+      PdoAssoc::$Pdo->exec($req);
+    }
   /*
   * UPDATE
   */
@@ -274,5 +281,15 @@ class PdoAssoc
   public function deleteValidation($token) {
     $req = 'DELETE FROM validation WHERE token = "' . $token . '"';
     PdoAssoc::$Pdo->exec($req);
+  }
+
+  /*
+  *TEST
+  */
+  public function testChatmember($email)
+  {
+    $req = 'SELECT email FROM chatmember WHERE email = '.$email.'';
+    $res = PdoAssoc::$Pdo->query($req);
+    return $res->fetch();
   }
 }
