@@ -669,6 +669,7 @@ form .form-change .default-button {
 	right: 24px;
 	position: fixed;
 	width: 300px;
+	z-index: 1000;
 }
 
 #live-chat header {

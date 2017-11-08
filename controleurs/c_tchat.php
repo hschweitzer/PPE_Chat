@@ -30,7 +30,7 @@ if (isset($_REQUEST['chat']))
         case 'envoi':
             var_dump($_SESSION);
             $message = $_POST['message'];
-
+            
             break;
     }
 }

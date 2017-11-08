@@ -211,6 +211,11 @@ class PdoAssoc
       $req = 'INSERT INTO chatmember (email) VALUES ("'.$email.'")';
       PdoAssoc::$Pdo->exec($req);
     }
+
+    public function insertMessage($email)
+    {
+      $req = 'INSERT INTO messages (id_user,admin,message) VALUES ()';
+    }
   /*
   * UPDATE
   */
