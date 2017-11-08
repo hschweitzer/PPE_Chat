@@ -4,7 +4,7 @@ messages[0].scrollTop = messages[0].scrollHeight;
 
 (function() {
 
-	$('#chatshow').on('click', function() {
+	$('#chat show').on('click', function() {
 
 		$('.chat').slideToggle(300, 'swing');
 		$('.chat-message-counter').fadeToggle(300, 'swing');
