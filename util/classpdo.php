@@ -212,9 +212,10 @@ class PdoAssoc
       PdoAssoc::$Pdo->exec($req);
     }
 
-    public function insertMessage($email)
+    public function insertMessage($email,$emailAdmin,$message)
     {
-      $req = 'INSERT INTO messages (id_user,admin,message) VALUES ()';
+      $req = 'INSERT INTO messages (id_user,admin,message) VALUES ('.$email.', '.$emailAdmin.', '.$message.')';
+      PdoAssoc::$Pdo->exec($req);
     }
   /*
   * UPDATE

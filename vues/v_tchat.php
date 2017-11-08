@@ -3,7 +3,16 @@
 
 <div id="live-chat">
 		<header class="clearfix">
-			<h4>Contacter l'administrateur</h4>
+			<h4>
+			<?php
+				if(isset($_POST['admin']))
+				{
+					?>
+			Répondre à un utilisateur
+					<?php
+				}
+			?>
+			Contacter l'administrateur</h4>
 		</header>
 		<div class="chat">
 			<div class="chat-history">
