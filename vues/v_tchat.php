@@ -24,7 +24,26 @@
 		
 
 			<?php
-	$link = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+			$link = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+	if(isset($_SESSION['admin']))
+	{
+		?>
+		<div class="chat-form">
+		<?php echo"<form method=\"POST\" action=\"$link&chat=select\">"; ?>
+		<select name="select_user">
+		<option value="" disabled selected hidden>Utilisateur</option>
+		<?php
+			foreach ($lesUsers as $value) {
+				echo '<option value="' . $value['email']. '">' . $value['email'] . '</option>';
+			}
+		?>
+	</select>
+	<input type="submit" name="btn_user" value="choisir" />
+	</form>
+	</div>
+	<?php
+	}
 	if(isset($_SESSION["chat_user"]))
 	{
 	echo"<form method=\"POST\" action=\"$link&chat=envoi\">";

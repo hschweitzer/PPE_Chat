@@ -129,6 +129,13 @@ class PdoAssoc
 		return $lesLignes;
   }
 
+  public function getLesUsers() {
+    $req = "SELECT email FROM chatmember WHERE TIMESTAMPDIFF(HOUR,derniere_activite, current_timestamp()) < 48";
+    $res = PdoAssoc::$Pdo->query($req);
+    $lesLignes = $res->fetchAll();
+    return $lesLignes;
+  }
+
   public function getChienParId($id) {
     $req = 'SELECT dog.* FROM dog WHERE tattoo_id="' . $id . '"';
     $res = PdoAssoc::$Pdo->query($req);

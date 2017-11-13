@@ -41,12 +41,19 @@ if (isset($_REQUEST['chat']))
             {
                 $fromAdmin = 1;
                 $admin = $_SESSION['admin'];
+                $email = $_SESSION['toUser'];
+                $date = new DateTime();
+                $date = date_format($date, 'Y-m-d H:i:s');
             }
             $message = $_POST['message'];
             $message = htmlspecialchars($message);
             $message = nl2br($message);
             $Pdo->insertMessage($email,$admin,$message,$fromAdmin);
             unset($_POST);
+            break;
+        
+        case 'select':
+                $_SESSION['toUser'] = $_POST['select_user'];
             break;
     }
     
