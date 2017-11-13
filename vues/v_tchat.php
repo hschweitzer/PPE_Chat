@@ -15,48 +15,10 @@
 			Contacter l'administrateur</h4>
 		</header>
 		<div class="chat">
-			<div class="chat-history">
+			<div class="chat-history" id="messages">
 				<div class="chat-message clearfix">
-
+					<!-- Messages ici -->
 				</div> <!-- end chat-message -->
-
-				<p>test de message (directement en hmtl)</p>
-		<p>test d'un autre message (aussi directement en html)</p>
-		<p>test d'un message plus long avec aussi un test de mot très long : zahfieoigbiergbiezabgubeuiagbehgaobrkebuirgauoheoziafhçezihnfigezbgupebzg</p>
-		<p>test de message (directement en hmtl)</p>
-		<p>test d'un autre message (aussi directement en html)</p>
-		<p>test d'un message plus long avec aussi un test de mot très long : zahfieoigbiergbiezabgubeuiagbehgaobrkebuirgauoheoziafhçezihnfigezbgupebzg</p>
-		<p>test de message (directement en hmtl)</p>
-		<p>test d'un autre message (aussi directement en html)</p>
-		<p>test d'un message plus long avec aussi un test de mot très long : zahfieoigbiergbiezabgubeuiagbehgaobrkebuirgauoheoziafhçezihnfigezbgupebzg</p>
-		<p>test de message (directement en hmtl)</p>
-		<p>test d'un autre message (aussi directement en html)</p>
-		<p>test d'un message plus long avec aussi un test de mot très long : zahfieoigbiergbiezabgubeuiagbehgaobrkebuirgauoheoziafhçezihnfigezbgupebzg</p>
-		<p>test de message (directement en hmtl)</p>
-		<p>test d'un autre message (aussi directement en html)</p>
-		<p>test d'un message plus long avec aussi un test de mot très long : zahfieoigbiergbiezabgubeuiagbehgaobrkebuirgauoheoziafhçezihnfigezbgupebzg</p>
-		<p>test de message (directement en hmtl)</p>
-		<p>test d'un autre message (aussi directement en html)</p>
-		<p>test d'un message plus long avec aussi un test de mot très long : zahfieoigbiergbiezabgubeuiagbehgaobrkebuirgauoheoziafhçezihnfigezbgupebzg</p>
-		<p>test de message (directement en hmtl)</p>
-		<p>test d'un autre message (aussi directement en html)</p>
-		<p>test d'un message plus long avec aussi un test de mot très long : zahfieoigbiergbiezabgubeuiagbehgaobrkebuirgauoheoziafhçezihnfigezbgupebzg</p>
-		<p>test de message (directement en hmtl)</p>
-		<p>test d'un autre message (aussi directement en html)</p>
-		<p>test d'un message plus long avec aussi un test de mot très long : zahfieoigbiergbiezabgubeuiagbehgaobrkebuirgauoheoziafhçezihnfigezbgupebzg</p>
-		<p>test de message (directement en hmtl)</p>
-		<p>test d'un autre message (aussi directement en html)</p>
-		<p>test d'un message plus long avec aussi un test de mot très long : zahfieoigbiergbiezabgubeuiagbehgaobrkebuirgauoheoziafhçezihnfigezbgupebzg</p>
-		<p>test de message (directement en hmtl)</p>
-		<p>test d'un autre message (aussi directement en html)</p>
-		<p>test d'un message plus long avec aussi un test de mot très long : zahfieoigbiergbiezabgubeuiagbehgaobrkebuirgauoheoziafhçezihnfigezbgupebzg</p>
-		<p>test de message (directement en hmtl)</p>
-		<p>test d'un autre message (aussi directement en html)</p>
-		<p>test d'un message plus long avec aussi un test de mot très long : zahfieoigbiergbiezabgubeuiagbehgaobrkebuirgauoheoziafhçezihnfigezbgupebzg</p>
-		<p>test de message (directement en hmtl)</p>
-		<p>test d'un autre message (aussi directement en html)</p>
-		<p>test d'un message plus long avec aussi un test de mot très long : zahfieoigbiergbiezabgubeuiagbehgaobrkebuirgauoheoziafhçezihnfigezbgupebzg</p>
-
 			</div> <!-- end chat-history -->
 
 		
@@ -78,13 +40,13 @@
 		</div>
 	</form>
 			<?php
-				if(!isset($_SESSION['id_user']))
+				if(!isset($_SESSION['id_user']) && !isset($_SESSION['admin']))
 				{
 					?>
 
 				<form method="POST" action="">
 					<div class="chat-form">
-						<input type="submit" name="btn_logout" value="Quitter le tchat" id="envoi" />
+						<input type="submit" name="btn_logout" value="Quitter le tchat" />
 					</div>
 				</form>
 					<?php
@@ -98,7 +60,7 @@
 	?>
 		<div class="chat-form">
 			<div>Adresse mail :</div><input type="text" name="email" id="pseudo" />
-			<input type="submit" name="btn_email" value="Utiliser l'adresse mail" id="envoi" />
+			<input type="submit" name="btn_email" value="Utiliser l'adresse mail" />
 		</div>
 	</form>
 	<?php
@@ -107,8 +69,10 @@
 
 		</div> <!-- end chat -->
 
-	</div> <!-- end live-chat 
-
+	</div> <!-- end live-chat -->
+<?php
+/*
+?>
 <div id="tchat" class="chat show">
 
 
@@ -204,8 +168,7 @@
 	</form>
 	<?php
 	}
+	
+	</div>
 	*/
 	?>
-
-</div>
--->

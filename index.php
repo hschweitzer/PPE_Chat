@@ -1,7 +1,5 @@
 <?php
 session_start();
-
-//TODO Renvoyer une erreur si connexion DB impossible plutôt que de charger du vent 15 ans
 require("util/classpdo.php");
 $Pdo = PdoAssoc::getPdoAssoc();
 require("util/send_mail.php");

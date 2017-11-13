@@ -7,13 +7,13 @@ if(isset($_SESSION['id_user']))
 
 if(isset($_SESSION['admin']))
 {
-    connexionChat($_SESSION['admin'],$Pdo);
+    $admin = $Pdo->getInfosAdmin($_SESSION['admin']);
+    connexionChat($admin['nom'],$Pdo);
 }
 
 if(isset($_REQUEST['btn_logout']))
 {
-    session_destroy($_SESSION['chat_user']);
-    var_dump($_SESSION);
+    unset($_SESSION['chat_user']);
     header("Location:index.php?uc=accueil");
     //echo "<meta http-equiv='refresh' content='0'>";
 }
@@ -28,10 +28,27 @@ if (isset($_REQUEST['chat']))
             break;
 
         case 'envoi':
-            var_dump($_SESSION);
+            if(!isset($_SESSION['admin']))
+            {
+                $email = $_SESSION['chat_user'];
+                $admin = "toto";
+                $date = new DateTime();
+                $date = date_format($date, 'Y-m-d H:i:s');
+                $Pdo->updateActivity($date,$email);
+                $fromAdmin = 0;
+            }
+            else
+            {
+                $fromAdmin = 1;
+                $admin = $_SESSION['admin'];
+            }
             $message = $_POST['message'];
-            
+            $message = htmlspecialchars($message);
+            $message = nl2br($message);
+            $Pdo->insertMessage($email,$admin,$message,$fromAdmin);
+            unset($_POST);
             break;
     }
+    
 }
 ?>

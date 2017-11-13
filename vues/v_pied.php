@@ -7,6 +7,7 @@
 			</div>
 		</div>
 		<script type="text/javascript" src="scripts/chat.js"></script>
+		<script type="text/javascript" src="scripts/envoi_chat.js"></script>
 		<script type="text/javascript" src="scripts/script.js"></script>
 	</body>
 </html>

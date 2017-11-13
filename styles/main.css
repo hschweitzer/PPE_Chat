@@ -629,10 +629,9 @@ form .form-change .default-button {
 }
 
 .chat textarea {
+	resize: vertical;
 	max-height: 100px;
-	max-width: 370px;
 	min-height: 30px;
-	min-width: 370px;
 }
 
 /*

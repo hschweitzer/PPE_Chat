@@ -2,19 +2,19 @@
 class PdoAssoc
 {
   private static $bdd='dbname=domaineduverger';
-  /*Docker*/
+  /*Docker
   private static $serveur='mysql:host=172.17.0.6';
   private static $user='anthony';
   private static $mdp='btssio';
 
-  /*Local
+  /*Local*/
   private static $serveur='mysql:host=127.0.0.1';
   private static $user='root';
-  private static $mdp='';*/
+  private static $mdp='';
   private static $Pdo;
   private static $_PdoAssoc = null;
 
-  private function __construct()
+  public function __construct()
   {
     PdoAssoc::$Pdo = new PDO(PdoAssoc::$serveur.';'.PdoAssoc::$bdd, PdoAssoc::$user, PdoAssoc::$mdp);
     PdoAssoc::$Pdo->query("SET CHARACTER SET utf8");
@@ -164,6 +164,22 @@ class PdoAssoc
     $ligne = $res->fetch();
     return $ligne["last"] + 1;
   }
+
+  public function getInfosAdmin($nom)
+  {
+    $req = "SELECT * FROM admin WHERE nom = \"".$nom."\"";
+    $res = PdoAssoc::$Pdo->query($req);
+    $ligne = $res->fetch();
+    return $ligne;
+  }
+
+  public function getLesMessages($email, $id)
+  {
+    $req = "SELECT * FROM messages WHERE mail_user=\"$email\" AND id > ".$id." ORDER BY time_send DESC";
+    $res = PdoAssoc::$Pdo->query($req);
+    $lignes = $res->fetchAll();
+    return $lignes;
+  }
   /*
   * INSERT
   */
@@ -212,9 +228,9 @@ class PdoAssoc
       PdoAssoc::$Pdo->exec($req);
     }
 
-    public function insertMessage($email,$emailAdmin,$message)
+    public function insertMessage($email,$admin,$message,$fromAdmin)
     {
-      $req = 'INSERT INTO messages (id_user,admin,message) VALUES ('.$email.', '.$emailAdmin.', '.$message.')';
+      $req = "INSERT INTO messages (mail_user,admin,message,from_admin) VALUES (\"$email\", \"$admin\", \"$message\",\"$fromAdmin\")";
       PdoAssoc::$Pdo->exec($req);
     }
   /*
@@ -257,6 +273,11 @@ class PdoAssoc
       PdoAssoc::$Pdo->exec($req);
     }
 
+    public function updateActivity($time,$email)
+    {
+      $req = 'UPDATE chatmember SET derniere_activite="'.$time.'" WHERE email = "'.$email.'"';
+      PdoAssoc::$Pdo->exec($req);
+    }
     /*Summary
     * idUser - utilisateur qui fait la modification
     * les autres informations concernent toutes le chien
@@ -294,7 +315,7 @@ class PdoAssoc
   */
   public function testChatmember($email)
   {
-    $req = 'SELECT id FROM chatmember WHERE email = "'.$email.'"';
+    $req = 'SELECT * FROM chatmember WHERE email = "'.$email.'"';
     $res = PdoAssoc::$Pdo->query($req);
     return $res->fetch();
   }

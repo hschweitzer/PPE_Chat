@@ -19,7 +19,7 @@ if (isset($_REQUEST['action'])) {
 					{
 						if ($Pdo->connexion_admin($_POST["identifiant"], $_POST["motdepasse"]))
 						{
-							$_SESSION["admin"] = true;
+							$_SESSION["admin"] = $_POST["identifiant"];
 							?><script type="text/javascript">window.location.href = 'index.php?uc=admin';</script> <?php
 						}
 					}

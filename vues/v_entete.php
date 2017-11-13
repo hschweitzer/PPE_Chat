@@ -2,10 +2,9 @@
 <html>
   <head>
     <link type="text/css" rel="stylesheet" href="styles/main.css" />
-    <link rel="stylesheet" type="text/css" href="styles/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="styles/font-awesome.min.css">
     <link rel="icon" href="images/icon.jpg">
     <script type="text/javascript" src="scripts/jquery-3.2.1.js"></script>
-    <!-- TODO Javascript / Css -->
     <meta charset="utf-8">
     <title>Le Domaine du Verger</title>
   </head>
