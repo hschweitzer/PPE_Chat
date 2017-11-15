@@ -35,23 +35,22 @@ function updateChat(){
 setTimeout (updateChat, 2500);
 */
 function charger(){
+
+    setTimeout( function(){
     
-        setTimeout( function(){
+        var premierID = $('#messages p:first').attr('id'); 
     
-            var premierID = $('#messages p:first').attr('id'); 
-    
-            $.ajax({
-                url : "util/charger.php?id=" + premierID,
-                type : "GET",
-                success : function(html){
-                    //html = html.replace(/</g, "&lt;").replace(/>/g, "&gt;");
-                    $('#messages').prepend(html);
-                }
-            });
-            charger();
-        }, 1000);
-    
-    }
+        $.ajax({
+            url : "util/charger.php?id=" + premierID,
+            type : "GET",
+            success : function(html){
+                $('#messages').prepend(html);
+            }
+        });
+        charger();
+    }, 1000);
+
+}
     
     charger();
     

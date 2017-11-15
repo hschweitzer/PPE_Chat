@@ -39,7 +39,7 @@
 			}
 		?>
 	</select>
-	<input type="submit" name="btn_user" value="choisir" />
+	<input type="submit" name="btn_user" value="Sélectionner" />
 	</form>
 	</div>
 	<?php
